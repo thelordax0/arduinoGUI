@@ -92,6 +92,15 @@ public class Menu extends javax.swing.JFrame {
         txtConsole.setColumns(20);
         txtConsole.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtConsole.setRows(5);
+        txtConsole.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                txtConsoleAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jScrollPane2.setViewportView(txtConsole);
 
         btnClear.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -229,7 +238,7 @@ public class Menu extends javax.swing.JFrame {
                         System.out.println(data);
                         Thread.sleep(100);
                         
-                       
+                       txtConsole.append("\n"+data);
                         
                             
                         
@@ -288,6 +297,10 @@ public class Menu extends javax.swing.JFrame {
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         txtConsole.setText("");
     }//GEN-LAST:event_btnClearActionPerformed
+
+    private void txtConsoleAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_txtConsoleAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtConsoleAncestorAdded
 
     /**
      * @param args the command line arguments
