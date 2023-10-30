@@ -52,21 +52,20 @@ public class ReadDataThread extends Thread{
     
     @Override
     public void run() {
-        while(true){
+        
             try {
             data=Utils.readData(port);
-            Utils.color=data;
             System.out.println(data);
             Thread.sleep(interval);
             
         } catch (Exception e) {
             System.out.println("read error");
-            break;
+           
         }
             
-        }
         
-       
+        
     }
+    
     
 }
